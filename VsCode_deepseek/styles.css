@@ -1,0 +1,314 @@
+/* 通用样式 */
+body {
+    font-family: 'Exo 2', sans-serif;
+    color: #00FFF0; /* 霓虹青 */
+    background-color: #0A1A2F; /* 深空蓝 */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 禁止缩放 */
+html, body {
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* 导航栏 */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 导航栏居中 */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(10, 26, 47, 0.9); /* 半透明深空蓝 */
+    z-index: 1000;
+    border-bottom: 2px solid #8A2BE2; /* 电子紫 */
+}
+
+.logo img {
+    height: 50px;
+}
+
+.logo .name {
+    font-family: 'Bauhaus 93', sans-serif;
+    font-size: 1.5em;
+    color: #00FFF0;
+    margin-left: 10px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #00FFF0;
+    font-family: 'Bauhaus 93', sans-serif;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #FF3B3B; /* 警报红 */
+}
+
+/* 主视觉区 */
+.main-visual {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, #0A1A2F, #1A1A2F);
+}
+
+#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* 粒子效果在底层 */
+}
+
+.holographic-text {
+    text-align: center;
+    z-index: 10; /* 文字在最上层 */
+}
+
+.holographic-text h1 {
+    font-family: 'Bauhaus 93', sans-serif;
+    font-size: 4em;
+    color: #00FFF0;
+    text-shadow: 0 0 10px #00FFF0, 0 0 20px #00FFF0;
+}
+
+.holographic-text p {
+    font-size: 1.5em;
+    color: #8A2BE2;
+    text-shadow: 0 0 10px #8A2BE2, 0 0 20px #8A2BE2;
+}
+
+.scroll-arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2em;
+    color: #00FFF0;
+    animation: bounce 2s infinite;
+    z-index: 10; /* 滚动箭头在最上层 */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* 作品展示区 */
+.portfolio {
+    padding: 50px 20px;
+    background-color: #1A1A2F;
+    border-top: 2px solid #8A2BE2;
+    text-align: center; /* 内容居中 */
+}
+
+.portfolio h2 {
+    font-family: 'Bauhaus 93', sans-serif;
+    font-size: 2.5em;
+    color: #00FFF0;
+    margin-bottom: 30px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* 网格居中 */
+}
+
+.project-card {
+    background-color: #0A1A2F;
+    border: 2px solid #8A2BE2;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* 鼠标悬停时显示为手型 */
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 255, 240, 0.5);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    font-family: 'Bauhaus 93', sans-serif;
+    font-size: 1.5em;
+    color: #00FFF0;
+    padding: 10px;
+    margin: 0;
+}
+
+.project-card p {
+    font-size: 1em;
+    color: #8A2BE2;
+    padding: 10px;
+    margin: 0;
+}
+
+/* 项目详情展示区 */
+.project-details {
+    padding: 50px 20px;
+    background-color: #1A1A2F;
+    border-top: 2px solid #8A2BE2;
+    text-align: center; /* 内容居中 */
+}
+
+.detail-content {
+    display: none; /* 默认隐藏 */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.detail-content h2 {
+    font-family: 'Bauhaus 93', sans-serif;
+    font-size: 2.5em;
+    color: #00FFF0;
+    margin-bottom: 20px;
+}
+
+.detail-content h3 {
+    font-family: 'Bauhaus 93', sans-serif;
+    font-size: 2em;
+    color: #8A2BE2;
+    margin-bottom: 20px;
+}
+
+.detail-content p {
+    font-size: 1.2em;
+    color: #8A2BE2;
+}
+
+.project-section {
+    margin-bottom: 40px;
+}
+
+.image-carousel {
+    position: relative;
+    width: 100%;
+    height: 400px; /* 固定高度 */
+    overflow: hidden;
+    border: 2px solid #8A2BE2;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px; /* 添加内边距，留出空间 */
+}
+
+.image-carousel img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%; /* 缩小图片宽度 */
+    height: 90%; /* 缩小图片高度 */
+    transform: translate(-50%, -50%); /* 居中图片 */
+    object-fit: contain; /* 确保图片完整显示 */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    image-rendering: -webkit-optimize-contrast; /* 优化图片渲染 */
+    image-rendering: crisp-edges; /* 边缘锐化 */
+    image-rendering: pixelated; /* 像素化渲染 */
+}
+
+.image-carousel img.active {
+    opacity: 1;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 100;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* 联系方式区 */
+.contact {
+    padding: 50px 20px;
+    background-color: #0A1A2F;
+    border-top: 2px solid #8A2BE2;
+    text-align: center; /* 内容居中 */
+}
+
+.contact h2 {
+    font-family: 'Bauhaus 93', sans-serif;
+    font-size: 2.5em;
+    color: #00FFF0;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-info .email {
+    font-size: 1.2em;
+    color: #00FFF0;
+    margin-bottom: 10px;
+}
+
+.contact-info .social-links a {
+    color: #8A2BE2;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.contact-info .social-links a:hover {
+    color: #FF3B3B;
+}
