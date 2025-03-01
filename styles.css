@@ -7,11 +7,12 @@ body {
     padding: 0;
     line-height: 1.6;
     overflow-x: hidden;
+    overflow-y: auto; /* 允许垂直滚动 */
 }
 
 /* 禁止缩放 */
 html, body {
-    touch-action: none;
+    touch-action: pan-y; /* 允许垂直滚动 */
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
